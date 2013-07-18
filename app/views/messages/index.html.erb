@@ -1,0 +1,17 @@
+<h1>Messages</h1>
+
+<h2>From Chef</h2>
+
+<ul>
+  <% @chef_entries.each do |entry| %>
+    <li><%= entry.message %> (<%= entry.created_at %>)</li>
+  <% end %>
+</ul>
+
+<h2>From Capistrano</h2>
+
+<ul>
+  <% @capistrano_entries.each do |entry| %>
+    <li><%= entry.message %> (<%= entry.created_at %>)</li>
+  <% end %>
+</ul>
