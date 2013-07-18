@@ -38,3 +38,11 @@ Create a chef cookbook for your application
 
 `ssh -l chefcapapp chef_cap_demo`
 
+# Capistrano
+
+Setup Capistrano
+
+1. `cd ..`
+1. `git checkout cap_setup`
+1. `bundle`
+1. `bundle exec cap chef_cap_demo deploy:setup deploy:migrations`
