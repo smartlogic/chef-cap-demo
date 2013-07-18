@@ -29,3 +29,12 @@ Check to see if you can login as the deploy user
 
 `ssh -l deploy chef_cap_demo`
 
+# Chef cookbook for the app
+
+Create a chef cookbook for your application
+
+1. `git checkout app_cookbook`
+1. `bundle exec knife cook vagrant@chef_cap_demo`
+
+`ssh -l chefcapapp chef_cap_demo`
+

@@ -20,9 +20,19 @@
       "postgres" : "password"
     }
   },
+  "rbenv" : {
+    "group_users" : [
+      "deploy",
+      "chefcapapp",
+      "vagrant"
+    ]
+  },
   "monit": {
     "poll_period" : 30,
     "poll_start_delay" : 60
+  },
+  "chef_cap" : {
+    "web_user" : "chefcapapp"
   },
   "run_list": [
     "recipe[build-essential]",
@@ -33,6 +43,7 @@
     "recipe[postgresql::server]",
     "recipe[users_solo::admins]",
     "recipe[nginx]",
-    "recipe[monit]"
+    "recipe[monit]",
+    "recipe[chef_cap]"
   ]
 }

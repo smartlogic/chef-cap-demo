@@ -1,0 +1,10 @@
+<%= node['chef_cap']['environment'] %>:
+  adapter: <%= node['chef_cap']['adapter'] %>
+  database: <%= node['chef_cap']['database'] %>
+  username: <%= node['chef_cap']['database_user'] %>
+<% if node['chef_cap']['database_password'] %>
+  password: <%= node['chef_cap']['database_password'] %>
+<% end %>
+  host: <%= node['chef_cap']['database_host'] %>
+  encoding: utf8
+  min_messages: warning
