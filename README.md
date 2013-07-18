@@ -46,3 +46,11 @@ Setup Capistrano
 1. `git checkout cap_setup`
 1. `bundle`
 1. `bundle exec cap chef_cap_demo deploy:setup deploy:migrations`
+
+# Capistrano tasks
+
+Create a capistrano task to run our rake task as part of deploy
+
+1. `git checkout cap_data`
+1. `bundle exec cap chef_cap_demo deploy`
+

@@ -37,9 +37,14 @@ namespace :custom do
   task :rbenv_version, :roles => :app do
     run "cd #{release_path} && rbenv local 1.9.3-p327"
   end
+
+  desc 'Install data'
+  task :data, :roles => :app do
+    run "cd #{current_path} && RAILS_ENV=#{rails_env} bundle exec rake cap_data"
+  end
 end
 
 before 'bundle:install', 'custom:rbenv_version'
 after 'deploy:update_code', 'custom:file_system'
-after 'deploy:restart', 'deploy:cleanup'
+after 'deploy:restart', 'custom:data', 'deploy:cleanup'
 
