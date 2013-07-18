@@ -1,0 +1,6 @@
+CMD='bash'
+which sudo > /dev/null && CMD='sudo bash'
+$CMD -c 'apt-get install curl -y'
+curl -L https://www.opscode.com/chef/install.sh > /tmp/chef-install.sh
+chmod +x /tmp/chef-install.sh
+$CMD -c '/tmp/chef-install.sh -v 10.26.0'
